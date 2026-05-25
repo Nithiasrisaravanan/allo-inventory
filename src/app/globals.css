@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: #1a1612;
+  --color-paper: #faf9f7;
+  --color-accent: #e85d26;
+  --color-accent-light: #fef0ea;
+  --color-muted: #8a847c;
+  --color-border: #e8e4df;
+  --color-success: #2d7d46;
+  --color-warning: #c47d0e;
+  --color-danger: #c0392b;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: #e85d26;
+    color: white;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono), "Courier New", monospace;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(232, 93, 38, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(232, 93, 38, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(232, 93, 38, 0); }
+}
+
+@keyframes countdown-tick {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.4s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 { animation: fadeUp 0.4s ease-out 0.1s both; }
+.animate-fade-up-delay-2 { animation: fadeUp 0.4s ease-out 0.2s both; }
+.animate-fade-up-delay-3 { animation: fadeUp 0.4s ease-out 0.3s both; }
+
+.countdown-urgent {
+  animation: countdown-tick 1s ease-in-out infinite;
+}
