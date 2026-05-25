@@ -1,8 +1,10 @@
-# Allo Inventory — Take-Home Exercise
+# Allo Inventory 
+
+Live URL: https://allo-inventory-amber-rho.vercel.app
 
 A Next.js inventory reservation platform with race-condition-safe stock management across multiple warehouses.
 
-**Live demo:** `https://your-app.vercel.app` ← replace after deploy
+
 
 ---
 
@@ -78,10 +80,13 @@ npm i -g vercel
 vercel
 
 # Set environment variables
-vercel env add DATABASE_URL
-vercel env add REDIS_URL
-vercel env add NEXT_PUBLIC_BASE_URL   # your https://xxx.vercel.app URL
-vercel env add CRON_SECRET
+DATABASE_URL="postgresql://neondb_owner:npg_bP7waeC8WscX@ep-super-hall-apijfnae-pooler.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+
+REDIS_URL="redis://default:gQAAAAAAARKoAAIgcDJmNThiMjY4YjFkODI0MmEwYTM1NWI3YzkxZThmNDFkMQ@cute-crow-70312.upstash.io:6379"
+
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+
+CRON_SECRET="allo-secret-123"
 
 # Run seed on production
 npx prisma db push
