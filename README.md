@@ -41,13 +41,11 @@ npm install
 cp .env.example .env
 ```
 
-Edit `.env` with your actual credentials:
 
 ```env
-DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
-REDIS_URL="redis://default:PASSWORD@HOST:PORT"
+
 NEXT_PUBLIC_BASE_URL="http://localhost:3000"
-CRON_SECRET="any-random-string"
+
 ```
 
 ### 4. Run migrations and seed
